@@ -1,0 +1,25 @@
+<div id="home" data-role="view" data-title="پروژه ها" data-model="announcementViewModel">
+<header data-role="header" data-id="jitterz-default-header">
+        <div data-role="navbar">
+            <a class="nav-button" data-role="backbutton" data-align="left">بازگشت</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+			<ul data-role="listview" id="announcements-listview" 
+				data-style="inset" data-template="announcement-listview-template" data-bind="source: announcements">
+			</ul>
+		</div>
+
+		<!-- Home page template -->
+		<script id="announcement-listview-template" type="text/x-kendo-template">
+            <a href='views/projectDetail.html?title=#:title#&description=#:description#&url=#:url#'
+               data-projectid="#:projectNumber#" data-role="listview-link" class="j-listview-item">
+                <div class="j-listview-item announcement">
+                    <img src="#:url#" />
+                    <div class="j-listview-item-content">
+                        <span style="font-family:'B Titr';font-size:large">#:title#</span>
+                        <span style="font-family:'B Nazanin'">#:description#</span>
+                    </div>
+                </div>
+            </a>
+		</script>

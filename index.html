@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>شهرداری</title>
+		<meta charset="utf-8" />
+ 
+		<!-- Styles -->
+		<link rel="stylesheet" href="kendo/styles/kendo.mobile.all.min.css" />
+        
+        <!-- Scripts -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script type="text/javascript" src="kendo/js/jquery.min.js"></script>
+		<script type="text/javascript" src="kendo/js/kendo.mobile.min.js"></script>
+		<script type="text/javascript" src="scripts/appData.js"></script>
+		<script type="text/javascript" src="viewModels/viewModels.js"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+
+		<!-- Default Stylesheet -->
+		<link rel="stylesheet" href="styles/main.css" />
+	</head>
+	<body dir="rtl">
+		<!-- Page Layout -->
+		<div data-role="layout" data-id="jitterz-default">
+			<header data-role="header" >
+				
+			</header>
+            <span class="header" ></span>
+			<div data-role="footer">
+				<div data-role="tabstrip" data-id="jitterz-tabstrip">
+					<a href="#home" data-icon="home">صفحه اصلی</a>
+                    <a href="views/introduce.html" data-icon="home">معرفی سازمان معاونت</a>
+					<a href="views/cardsView.html" data-icon="organize">فرصت های سرمایه گزاری</a>
+                    <a href="views/projectsView.html" data-icon="home">پروژه های مشارکتی</a>
+					<a href="views/rewardsView.html" data-icon="toprated">ثبت نام سرمایه گذاران</a>
+					<a href="views/contactUs.html" data-icon="globe">ارتباط با ما</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Home page -->
+		<div id="home" data-role="view" data-title="Jitterz" data-model="announcementViewModel">
+			<ul data-role="listview" id="announcements-listview" 
+				data-style="inset" data-template="announcement-listview-template" data-bind="source: announcements">
+			</ul>
+		</div>
+
+		<!-- Home page template -->
+		<script id="announcement-listview-template" type="text/x-kendo-template">
+            <a href='views/projectDetail.html?title=#:title#&description=#:description#&url=#:url#'
+               data-projectid="#:projectNumber#" data-role="listview-link" class="j-listview-item">
+                <div class="j-listview-item announcement">
+                    <img src="#:url#" />
+                    <div class="j-listview-item-content">
+                        <span style="font-family:'B Titr';font-size:large">#:title#</span>
+                        <span style="font-family:'B Nazanin'">#:description#</span>
+                    </div>
+                </div>
+            </a>
+		</script>
+        
+		<script>
+			var app = new kendo.mobile.Application(document.body, { transition: "slide", layout: "jitterz-default" });
+		</script>
+	</body>
+</html>

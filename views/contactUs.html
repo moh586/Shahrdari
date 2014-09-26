@@ -1,0 +1,49 @@
+<style type="text/css">
+img{
+width:100%;
+}
+form label,legend
+{
+color:#123456;
+}
+p{
+text-align:center;
+}
+.nesasery{
+color:red;
+}
+
+</style>
+<div id="contactUs" class="ui-content" data-role="view" data-title="ارتباط با ما" >
+	<header data-role="header" data-id="jitterz-default-header">
+        <div data-role="navbar">
+            <a class="nav-button" data-role="backbutton" data-align="left">بازگشت</a>
+            <span data-role="view-title"></span>
+        </div>
+    </header>
+	<form method="post" action="View/MessageResult" data-ajax="false" style="margin:10px">
+<label for="name">نام :<span class="nesasery">*</span></label><br />
+<input type="text" name="name" id="name" placeholder="Name"><br />
+<label for="email">ایمیل : <span class="nesasery">*</span></label><br />
+<input type="email" id="email" name="email" placeholder="Email"/><br />
+<fieldset data-role="controlgroup">
+<legend>جنسیت :</legend>
+<label for="male">مرد </label>
+<input type="radio" name="gender" id="male" value="male"><br />
+<label for="female">زن</label>
+<input type="radio" name="gender" id="female" value="female"><br />
+</fieldset>
+<fieldset data-role="controlgroup">
+<legend>میزان تحصیلات</legend>
+<label for="graduation">دیپلم</label>
+<input type="checkbox" id="graduation" value="graduation"><br />
+<label for="postgraduation">کارشناسی</label>
+<input type="checkbox" id="postgraduation" value="postgraduation"><br />
+<label for="other">بالاتر</label>
+<input type="checkbox" id="other" value="other"><br />
+</fieldset>
+<label for="info">پیغام :</label><br />
+<textarea name="addinfo" id="info" placeholder="Message"></textarea><br />
+<input type="submit" data-inline="true" value="Submit" data-theme="b"><br />
+</form>
+</div>

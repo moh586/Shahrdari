@@ -1,0 +1,36 @@
+<div id="projectDetail"
+     data-role="view" data-style="inset"
+     data-title="Project" data-show="singleProjectShow" data-init="singleProjectInit"
+     data-model="singleProjectViewModel">
+    <header data-role="header" data-id="jitterz-default-header">
+        <div data-role="navbar">
+            <a class="nav-button" data-role="backbutton" data-align="left">Back</a>
+            <span data-role="view-title"></span>
+            <a id="editCardButton" data-role="button" data-align="right" data-rel="actionsheet" href="#singlePojectActions">Edit</a>
+        </div>
+    </header>
+    <div>
+        <div id="cardFront" data-bind="attr: {class: cardStatus}">
+            <div class="project-icon">
+                <div class="j-icon main-badge"></div>
+            </div>
+            <div class="card-bonus">
+                <span data-bind="text: title"></span>
+                <div>
+                    <span data-bind="text: description"></span>
+                </div>
+            </div>
+            <div class="card-line">
+                <span data-bind="text: cardId"></span>
+            </div>
+        </div>
+        <div id="cardBack" data-bind="attr: {class: cardStatus}">
+            <img id="barcodeImage" data-bind="attr: {src:barcodeUrl}" alt="Shop Card Id" />
+        </div>
+        <ul data-role="actionsheet" class="singlePojectActionsList" id="singlePojectActions" data-popup='{"direction": "left"}'>
+            <li>
+                <a href="#" data-role="button" data-bind="events: { click : deleteCard }" class="singleCardDeleteButton">Delete</a>
+            </li>
+        </ul>
+    </div>
+</div>
